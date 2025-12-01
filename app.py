@@ -45,32 +45,22 @@ if "df" not in st.session_state:
 
 df = st.session_state.df
 
-# -------------------------------
-# Title
-# -------------------------------
-st.title("🏨 Room Allotment List")
 
-# -------------------------------
-# FILTERS
-# -------------------------------
-st.subheader("Filters")
-
-# Prepare columns for filters (3 per row)
-cols = st.columns(3)
+col1, col2, col3 = st.columns(3)
 filter_values = {}
 
-# Dynamically create filters for each column
-for i, col_name in enumerate(df.columns):
-    col = cols[i % 3]  # distribute filters across 3 columns
-    if pd.api.types.is_datetime64_any_dtype(df[col_name]):
-        # Date filter
-        filter_values[col_name] = col.date_input(col_name, value=None)
-    else:
-        # Convert values to string for consistent sorting and display
-        unique_vals = df[col_name].dropna().astype(str).unique()
-        filter_values[col_name] = col.selectbox(
-            col_name, [""] + sorted(unique_vals)
-        )
+# MEMBER NAME filter
+filter_values["MEMBER NAME"] = col1.selectbox(
+    "Member Name", [""] + sorted(df["MEMBER NAME"].dropna().astype(str).unique())
+)
+
+# Room Key filter
+filter_values["Room Key"] = col2.selectbox(
+    "Room Key", [""] + sorted(df["Room Key"].dropna().astype(str).unique())
+)
+
+# Arrival Date filter
+filter_values["ARRIVAL DATE"] = col3.date_input("Arrival Date", value=None)
 
 # -------------------------------
 # APPLY FILTERS
@@ -79,7 +69,7 @@ filtered = df.copy()
 
 for col_name, val in filter_values.items():
     if val:
-        if pd.api.types.is_datetime64_any_dtype(df[col_name]):
+        if col_name == "ARRIVAL DATE":
             filtered = filtered[filtered[col_name].dt.date == val]
         else:
             filtered = filtered[filtered[col_name].astype(str) == val]
