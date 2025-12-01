@@ -10,10 +10,7 @@ st.set_page_config(page_title="Room Allotment", layout="wide")
 # Load credentials + gspread ONLY ONCE (session_state)
 # -------------------------------
 if "client" not in st.session_state:
-
-    with open("GOOGLE_CREDS.json") as f:
-        creds_dict = json.load(f)
-
+    creds_dict = json.loads(st.secrets["GOOGLE_CREDS"])
     creds = Credentials.from_service_account_info(
         creds_dict,
         scopes=[
@@ -21,8 +18,10 @@ if "client" not in st.session_state:
             "https://www.googleapis.com/auth/drive"
         ]
     )
-
+    client = gspread.authorize(creds)
     st.session_state.client = gspread.authorize(creds)
+
+
 
 # -------------------------------
 # Load Google Sheet ONLY ONCE
