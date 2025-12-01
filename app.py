@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import gspread
 from google.oauth2.service_account import Credentials
-import json
 
 st.set_page_config(page_title="Room Allotment", layout="wide")
 
@@ -30,8 +29,7 @@ if "client" not in st.session_state:
             "https://www.googleapis.com/auth/drive"
         ]
     )
-    client = gspread.authorize(creds)
-    st.session_state.client = client
+    st.session_state.client = gspread.authorize(creds)
 
 # -------------------------------
 # Load Google Sheet ONLY ONCE
@@ -66,12 +64,10 @@ for i, col_name in enumerate(df.columns):
     col = cols[i % 3]  # distribute filters across 3 columns
     if pd.api.types.is_datetime64_any_dtype(df[col_name]):
         # Date filter
-        filter_values[col_name] = col.date_input(
-            col_name, value=None
-        )
+        filter_values[col_name] = col.date_input(col_name, value=None)
     else:
-        # Categorical / text filter
-        unique_vals = df[col_name].dropna().unique()
+        # Convert values to string for consistent sorting and display
+        unique_vals = df[col_name].dropna().astype(str).unique()
         filter_values[col_name] = col.selectbox(
             col_name, [""] + sorted(unique_vals)
         )
@@ -81,12 +77,12 @@ for i, col_name in enumerate(df.columns):
 # -------------------------------
 filtered = df.copy()
 
-for col, val in filter_values.items():
+for col_name, val in filter_values.items():
     if val:
-        if pd.api.types.is_datetime64_any_dtype(df[col]):
-            filtered = filtered[filtered[col].dt.date == val]
+        if pd.api.types.is_datetime64_any_dtype(df[col_name]):
+            filtered = filtered[filtered[col_name].dt.date == val]
         else:
-            filtered = filtered[filtered[col] == val]
+            filtered = filtered[filtered[col_name].astype(str) == val]
 
 # Convert ARRIVAL DATE to date for display
 if "ARRIVAL DATE" in filtered.columns:
