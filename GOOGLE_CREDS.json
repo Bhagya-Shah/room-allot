@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "room-allotment-479911",
+  "private_key_id": "f39438afd919a8849372e144ae4ce1743312dd5e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDRS4i0LXmbe0xx\nBZaOvIKQcAlWu8s/jrRGIsYKC8w+d5Mtt5izcXcUm9+UvtU6HsazJ6xhu28XBV+l\nBoyhFPi0nmM1k9IjLpOk+Un/kX4GFkuoAOgxv2ihlZlsIqobPO63+s7xgb7SmH7q\ndGnWEBbrAF7Lprw0JBEjWZW+NYyEfBKMBc5DIVJRa544yEHdI38HVb9UDj2zWL6f\nphixKOgf2rIg1vyBRNDhjkM3H9V3Dh0leUSD/a7l5L/ybiZZpU3eLL0r/0TjoQEE\nYZz7VGVAs64+UUhClchFBoRgA5f3Ub8TyzwIS8lrL84er7WnsdSAF0pG/8Ik7+Qw\nONmVeVEVAgMBAAECggEAVaB2BuUd/hcVQJ49KRuFvUsg/vuo3VFoftNGO6D1CE+K\nhuc40Z1nzyYwdF4YxYUG3RArrfZtrjj0FwOVcGewktDEHQzjqaIqJJIbDLS9Hwdr\nH4pzdLrvN0CJutx5xNgKgHnbxaHD7MwYDJrhHAOMJMwLfH00PY7N9iz2HxIwcZjF\n1gHJ3mk2aGKVD6E6dHUsPEc/x9jkIZX8QgMirqUwoozccAG9sIDHY0FHkAOj+5qG\nVUMKMuNXMIZQzpzfcSCZhF61Vv4U4jra3WD+4/TvX3bBlNeT4kV03+6YoM32rCkn\nAKcdLEdUFJaTF+b9hsCuiHXxky3oaPI99aiV50/plwKBgQDtONHW5N38Z+VG6KUX\nCQUA+otI7G0zZQ+ARfnB2GaV6wG+P9KmVdj1GYZywnYKtmK+sB1bxBkYkyN6l8Pi\nOVUhVyxnjLGRHGtBukaARGnopi4ErG/n8MFyiA5OCfGGPYZ4xtN30jxCWv4YQKci\nRQrNcFZ4rzjROuyyQf8lm8pmowKBgQDh3MpIdKWkLeMTDwTKSz7gap8zcMPAXjN+\nxOtywJDyZGGTqZSu0/k0eaayKZ2flbHbeDl9Yqr/vdyqRSlp2EFx8d9OgdvhJ+N3\n4R1xq9F+BIQAKZy9Zc4PhSEvnZK07zX2+/pGP45QYQ2KqyhGad+UxygmN+/FdXEu\ngP0fKh285wKBgAR+4SsrZzGTXnr7ibVoDFo6ZU1afa9NqP+LU/JigX8x1vSeDQXt\n9pCejTe7i7UkQ7bNa6EDlF4s261FFwdAguaA2myT9AGGAlpah1+C7GbmT1TzV6OT\nonbjMTI1aghbPiMn0XYh29Z+FvaqswApQs0l5d2fpHoCnd269nTmAO31AoGAJu7p\nS54X43opd2KSX9CisQqQEMzyYVmbpNGLCIfbNH1LOKn1wEE35uzFaFa2Hgku1Hcf\n6dY1RcpTnGI5pk4p0dtws9a8sU4v7r02Vx7YCNH8cw65PwiqgZBgTRXrcRb/BWkg\nFjXkcUSZkfq5AZJEgR/nctcXlMEO1oZTm6il4acCgYEAy4KidJnd/1GHGLGrUKoj\nVsGpI3G5mWyIPz/ajr5InHWnx1imbH6ol8b0sFELZrMNmIqqMo724Xe0bNZaBSSl\n5zkT/zcSz1qhBKaKcEDwXgyDl1B2AA5r6Akmfty83+V/XScxtZq2NWZzFYUG6l3u\nGQNBvUYWBNLThtiSU9+k1qc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "room-app@room-allotment-479911.iam.gserviceaccount.com",
+  "client_id": "109954554415195343946",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/room-app%40room-allotment-479911.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
