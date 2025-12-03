@@ -77,7 +77,18 @@ for col_name, val in filter_values.items():
 # Convert ARRIVAL DATE to date for display
 if "ARRIVAL DATE" in filtered.columns:
     filtered["ARRIVAL DATE"] = filtered["ARRIVAL DATE"].dt.date
+    
+if any(filter_values.values()):
+    st.markdown("### Filter Summary")
+    st.write(f"Total Records: **{len(filtered)}**")
 
+    if "Room Key" in filtered.columns:
+        st.write("Room Key Counts:")
+        st.write(filtered["Room Key"].value_counts())
+
+    if "MEMBER NAME" in filtered.columns:
+        st.write("Member Name Counts:")
+        st.write(filtered["MEMBER NAME"].value_counts())
 # -------------------------------
 # TABLE
 # -------------------------------
